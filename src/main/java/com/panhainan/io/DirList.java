@@ -25,10 +25,28 @@ public class DirList {
     }
     public static void main(String[] args) {
         File file = new File(".");
-        String[] names = file.list(filenameFilter(".*xml$"));//new DirFilter(".*xml$")
-        for(String name : names){
-            System.out.println(name);
-        }
+        getFiles(file);
+    }
+    public static void getFiles(File file){
+    	if(file.isDirectory()){
+    		File[] files = file.listFiles();
+    		for(File f: files){
+            	if(f.isDirectory()){
+            		getFiles(f);
+            	}else{
+            		searchFile(f);
+            	}
+            	
+            }
+    	}else{
+    		searchFile(file);
+    	}
+    }
+    public static void searchFile(File file){
+    	 String[] names = file.list(filenameFilter(".*.java$"));//new DirFilter(".*xml$")
+         for(String name : names){
+             System.out.println(name);
+         }
     }
 }
 class DirFilter implements FilenameFilter{
