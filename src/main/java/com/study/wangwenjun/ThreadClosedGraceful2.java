@@ -1,6 +1,7 @@
 package com.study.wangwenjun;
 
 /**
+ * @Use: 优雅的停止线程-采用中断
  * @Author: Hainan Pan (FireOct)
  * @Date: 2017/2/22
  * @Email: panhainan@yeah.net
@@ -12,32 +13,28 @@ public class ThreadClosedGraceful2 {
         @Override
         public void run() {
             while (true) {
-                /*if(isInterrupted()){
-                    break;
-                }*/
-                //或者下面这种方法
-                if (Thread.interrupted()) {
+                if(isInterrupted()){
                     break;
                 }
-                System.out.println("...");
+                //或者下面这种方法
+                /*if (Thread.interrupted()) {
+                    break;
+                }*/
+                System.out.println("doing something...");
             }
             //
             System.out.println("interrupt.");
-
         }
-
     }
 
     public static void main(String[] args) {
         Worker worker = new Worker();
-
         worker.start();
         try {
             Thread.sleep(3_000L);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         worker.interrupt();
 
     }

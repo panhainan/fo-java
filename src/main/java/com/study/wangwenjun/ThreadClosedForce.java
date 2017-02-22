@@ -29,6 +29,6 @@ public class ThreadClosedForce {
         });
         service.shutDown(10_000L);
         long end = System.currentTimeMillis();
-        System.out.println(end - start);
+        System.out.println("共耗时："+(end - start));
     }
 }

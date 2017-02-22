@@ -1,7 +1,7 @@
 package com.study.wangwenjun;
 
 /**
- * @Use: 优雅的关闭线程
+ * @Use: 优雅的停止线程-设置标志位方法
  * @Author: Hainan Pan (FireOct)
  * @Date: 2017/2/22
  * @Email: panhainan@yeah.net

@@ -1,6 +1,7 @@
 package com.study.wangwenjun;
 
 /**
+ * @Use: 强行的停止线程-利用守护线程跟随执行线程的关闭而关闭的特性
  * @Author: Hainan Pan (FireOct)
  * @Date: 2017/2/22
  * @Email: panhainan@yeah.net

@@ -47,7 +47,7 @@ public class ThreadInterrupted {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                t.interrupt();
+                main.interrupt();
                 System.out.println("interrupt.");
             }
         };
