@@ -18,10 +18,10 @@ class SuperClass {
 }
 
 public class ObjectInit extends SuperClass {
-    private static String STR = "Class Static Variable";
+    private static String STR0 = "Class Static Variable";
 
     static {
-        System.out.println("Class Static Block:" + STR);
+        System.out.println("Class Static Block:" + STR0);
     }
 
     public ObjectInit() {
