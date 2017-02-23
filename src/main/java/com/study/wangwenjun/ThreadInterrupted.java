@@ -9,7 +9,7 @@ package com.study.wangwenjun;
  */
 public class ThreadInterrupted {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         /*Thread t = new Thread() {
             @Override
             public void run() {
