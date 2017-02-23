@@ -21,7 +21,7 @@ public class ThreadClosedForce {
 
                 }*/
                 try {
-                    Thread.sleep(5_000L);
+                    Thread.sleep(9_000L);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
