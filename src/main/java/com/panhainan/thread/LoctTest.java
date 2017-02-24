@@ -14,15 +14,17 @@ public class LoctTest {
         final BooleanLock booleanLock = new BooleanLock();
 
         for (int i = 0; i < 4; i++) {
-            new Thread("T"+i){
+            new Thread("T" + i) {
                 @Override
                 public void run() {
                     try {
-                        booleanLock.lock();
+                        booleanLock.lock(15_000L);
                         work();
+                    } catch (Lock.TimeOutException e) {
+                        System.out.println(Thread.currentThread().getName() + " time out.");
                     } catch (InterruptedException e) {
                         e.printStackTrace();
-                    }finally {
+                    } finally {
                         booleanLock.unlock();
                     }
 
@@ -33,7 +35,8 @@ public class LoctTest {
     }
 
     public static void work() throws InterruptedException {
-        System.out.println(Thread.currentThread().getName()+" is working.");
+        System.out.println(Thread.currentThread().getName() + " is working.");
         Thread.sleep(10_000L);
+        System.out.println(Thread.currentThread().getName() + " is worked.");
     }
 }
